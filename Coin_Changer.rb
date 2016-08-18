@@ -4,6 +4,7 @@ def coin_changer(currency)
 	correct_change = {:penny => 0, :nickel => 0, :dime => 0, :quarter => 0}
 
 		coins_value.each do |coin, value|
+			
 			while 
 				value <= currency
 				correct_change[coin] += 1
@@ -12,3 +13,4 @@ def coin_changer(currency)
 		end
 	correct_change
 end
+

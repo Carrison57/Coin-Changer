@@ -18,7 +18,19 @@ class Test_Coin_Changer < Minitest::Test
 		assert_equal({nickel: 1}, generate_change(5))
 	end
 
-	def test_7_cents_returns_hash_with_one_nickel_two_pennies
+	def test_seven_cents_returns_hash_with_one_nickel_two_pennies
 		assert_equal({nickel: 1, penny: 3}, generate_change(8))
+	end
+
+	def test_eleven_cents_returns_hash_with_one_dime_one_penny
+		assert_equal({dime: 1, penny: 1}, generate_change(11))
+	end
+
+	def test_fifteen_cents_returns_hash_with_one_dime_one_nickel
+		assert_equal({dime: 1, nickel: 1}, generate_change(15))
+	end
+
+	def test_sixteen_cents_returns_hash_with_one_dime_one_nickel_one_penny
+		assert_equal({dime: 1, nickel: 1}, generate_change(15))
 	end
 end

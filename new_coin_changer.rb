@@ -5,6 +5,7 @@ def generate_change(cents)
 	quarter = 25
 	dime = 10
 	nickel = 5
+	penny = 1
 	
 	if cents >= quarter
 		coins = cents / quarter
@@ -19,11 +20,14 @@ def generate_change(cents)
 	end
 	
 	if cents >= nickel
-		change[:nickel] = 1
-		cents = cents - nickel
+		coins = cents / nickel
+		change[:nickel] = coins
+		cents = cents - (nickel * coins)
 	end
-	if cents > 0
+	if cents >= penny
+		coins = cents / penny
 		change[:penny] = cents
+		cents = cents - (penny * coins)
 	end
 
 	

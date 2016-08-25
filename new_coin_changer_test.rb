@@ -45,4 +45,8 @@ class Test_Coin_Changer < Minitest::Test
 	def test_thirty_cents_returns_hash_with_one_quarter_one_nickel
 		assert_equal({quarter: 1, nickel: 1}, generate_change(30))
 	end
+
+	def test_one_dollar_and_sixty_six_cents_returns_one_dollar_two_quarters_one_dime_one_nickel_one_penny
+		assert_equal({dollar: 1, quarter: 2, dime: 1, nickel: 1, penny: 1}, generate_change(166))
+	end
 end

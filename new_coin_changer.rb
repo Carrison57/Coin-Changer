@@ -2,7 +2,7 @@ def generate_change(cents)
 	
 	change = {}
 
-	coin_values = {quarter: 25, dime: 10, nickel: 5, penny: 1}
+	coin_values = {dollar: 100, quarter: 25, dime: 10, nickel: 5, penny: 1}
 
 	coin_values.each do |coin_name, coin_value|
 		if cents >= coin_value
@@ -11,10 +11,5 @@ def generate_change(cents)
 			cents = cents - (coin_value * coins)
 		end
 	end
-
 	change
-	
 end
-
-
-# if 

@@ -1,56 +1,16 @@
 def generate_change(cents)
 	
 	change = {}
-	
-	quarter = 25
-	dime = 10
-	nickel = 5
-	penny = 1
-	
-	if cents >= quarter
-		coins = cents / quarter
-		change[:quarter] = coins
-		cents = cents - (quarter * coins)
-	end
 
-	if cents >= dime
-		coins = cents / dime
-		change[:dime] = coins
-		cents = cents - (dime * coins) 
-	end
-	
-	if cents >= nickel
-		coins = cents / nickel
-		change[:nickel] = coins
-		cents = cents - (nickel * coins)
-	end
-	if cents >= penny
-		coins = cents / penny
-		change[:penny] = cents
-		cents = cents - (penny * coins)
-	end
+	coin_values = {quarter: 25, dime: 10, nickel: 5, penny: 1}
 
-	
-
-
-	# if cents == 16
-	# 	change[:dime]
-	# 	change[:nickel]
-	# 	change[:penny] = cents - 15
-	# elsif cents == 15
-	# 	change[:dime] = 1
-	# 	change[:nickel] = 1
-	# elsif cents >= 10
-	# 	change[:dime] = 1
-	# 	change[:penny] = cents - 10
-	# elsif cents > 5
-	# 	change[:nickel] = 1
-	# 	change[:penny] = cents - 5
-	# elsif cents == 5 
-	# 	change[:nickel] = 1
-	# elsif cents > 0
-	# 	change[:penny] = cents
-	# end
+	coin_values.each do |coin_name, coin_value|
+		if cents >= coin_value
+		 	coins = cents / coin_value
+			change[coin_name] = coins
+			cents = cents - (coin_value * coins)
+		end
+	end
 
 	change
 	
